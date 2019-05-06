@@ -1,24 +1,31 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #include "shape.h"
+#include "sphere.h"
 
 using namespace std;
 
-Shape::Shape(int _x, int _y, int _z)
-    : x(_x), y(_y), z(_z)
+const double PI = 3.14 ;
+
+Sphere::Sphere(int _x, int _y, int _z,int _radius)
+    : Shape(_x,_y,_z)
 {
+    radius = _radius ;
 }
 
-void Shape::move(int dx, int dy, int dz)
+string Sphere::get_type() const
 {
-    x += dx ;
-    y += dy ;
-    z += dz ;
+    return "Sphere" ;
 }
 
-std::ostream& operator<<(std::ostream& out, const Shape* shape)
+void Sphere::scale(int factor)
 {
-    out <<"type: " <<shape->get_type() <<", center: (" <<shape->x <<", " <<shape->y <<", " <<shape->z 
-        <<"), volume: " <<shape->volume() <<endl ;
+    radius *= factor ;
+}
+
+int Sphere::volume() const 
+{
+    return int( (double(4)/3) * PI * pow(radius,3) ) /1 ;
 }
