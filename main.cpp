@@ -1,16 +1,16 @@
 #include <vector>
 #include <iostream>
-/*
+
 #include "shape.h"
-#include "sphere.h"
-#include "cone.h"
-#include "cuboid.h"
-*/
+// #include "sphere.h"
+// #include "cone.h"
+// #include "cuboid.h"
+
 using namespace std;
 
 int main()
-{/*
-    vector<Shape*> shapes;
+{
+    vector<Shape*> shapes;/*
     shapes.push_back(new Sphere(10, 10, 10, 2));
     shapes.push_back(new Cuboid(10, 10, 10, 1, 2, 3));
     shapes.push_back(new Cone(10, 10, 10, 2, 5));
